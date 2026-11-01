@@ -124,8 +124,8 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Titan",
     category: "Luxury",
     price: 24995,
-    imageUrl: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-    description: "One of the slimmest ceramic watches in the world at just 4.4mm thin. Hypoallergenic high-tech ceramic case with sapphire glass.",
+    imageUrl: "/src/assets/images/hero_luxury_chronograph_1793529330446.jpg",
+    description: "One of the slimmest ceramic watches in the world with obsidian black dial, hypoallergenic case, and sapphire glass.",
     stock: 18
   },
   {
@@ -134,7 +134,7 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Casio",
     category: "Sports",
     price: 8995,
-    imageUrl: "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/src/assets/images/watch_gshock_rugged_1793532280139.jpg",
     description: "The legendary 'CasiOak'. Ultra-rugged carbon core guard structure, 200M water resistance, dual digital-analog display.",
     stock: 35
   },
@@ -144,8 +144,8 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Titan",
     category: "Luxury",
     price: 19995,
-    imageUrl: "https://images.unsplash.com/photo-1547996160-71dfa6358268?auto=format&fit=crop&w=800&q=80",
-    description: "Intricate open-heart skeleton dial revealing the rhythmic heartbeat of precision automatic movement. Rose gold plated case.",
+    imageUrl: "/src/assets/images/watch_skeleton_automatic_1793532302935.jpg",
+    description: "Intricate open-heart skeleton dial revealing the rhythmic heartbeat of precision automatic movement with rose gold accents.",
     stock: 12
   },
   {
@@ -154,7 +154,7 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Fastrack",
     category: "Smartwatch",
     price: 4995,
-    imageUrl: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/src/assets/images/watch_fastrack_smartwatch_1793532279618.jpg",
     description: "1.3-inch Ultra AMOLED display with Bluetooth calling, built-in games, 100+ sports modes, SpO2 monitor, and 7-day battery life.",
     stock: 50
   },
@@ -164,7 +164,7 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Timex",
     category: "Analog",
     price: 16495,
-    imageUrl: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/src/assets/images/watch_timex_vintage_1793532280439.jpg",
     description: "A true 1960s reissue featuring a hand-wound mechanical movement, domed acrylic crystal, champagne dial, and embossed leather.",
     stock: 14
   },
@@ -174,7 +174,7 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Fossil",
     category: "Smartwatch",
     price: 22995,
-    imageUrl: "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/src/assets/images/watch_fastrack_smartwatch_1793532279618.jpg",
     description: "Powered with Wear OS by Google. Qualcomm Snapdragon Wear 4100+ platform, fast charging, heart rate zone tracking.",
     stock: 22
   },
@@ -184,17 +184,17 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Seiko",
     category: "Sports",
     price: 26500,
-    imageUrl: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80",
-    description: "Iconic diver aesthetics with unidirectional rotating bezel, Lumibrite hour markers, day/date complication, and 4R36 caliber.",
+    imageUrl: "/src/assets/images/watch_seiko_diver_1793532301210.jpg",
+    description: "Iconic diver aesthetics with unidirectional rotating navy bezel, Lumibrite hour markers, day/date complication, and 4R36 caliber.",
     stock: 16
   },
   {
     id: 11,
-    name: "Expedition Shock Digital Digital Trail",
+    name: "Expedition Shock Digital Trail",
     brand: "Timex",
     category: "Digital",
     price: 5495,
-    imageUrl: "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/src/assets/images/watch_gshock_rugged_1793532280139.jpg",
     description: "Built for rugged wilderness adventures. Heavy-duty shock resistance, INDIGLO night-light, 100-hour chronograph.",
     stock: 40
   },
@@ -204,7 +204,7 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Casio",
     category: "Digital",
     price: 4295,
-    imageUrl: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=800&q=80",
+    imageUrl: "/src/assets/images/watch_casio_vintage_gold_1793532302040.jpg",
     description: "Timeless retro 1980s aesthetic with polished gold-tone stainless steel bracelet, daily alarm, hourly time signal, and auto-calendar.",
     stock: 45
   },
@@ -214,8 +214,8 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Fastrack",
     category: "Analog",
     price: 2895,
-    imageUrl: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
-    description: "Youthful contemporary minimalist timepiece with matte black dial, high-contrast neon second hand, and flexible silicone strap.",
+    imageUrl: "/src/assets/images/hero_luxury_chronograph_1793529330446.jpg",
+    description: "Youthful contemporary timepiece with textured black dial, high-contrast gold second hand, and durable sport strap.",
     stock: 60
   },
   {
@@ -224,8 +224,8 @@ const SAMPLE_PRODUCTS: WatchProduct[] = [
     brand: "Titan",
     category: "Luxury",
     price: 32500,
-    imageUrl: "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=800&q=80",
-    description: "Prestigious royal luxury watch adorned with genuine certified diamond hour markers on a gold-plated multi-link Jubilee bracelet.",
+    imageUrl: "/src/assets/images/watch_titan_regalia_gold_1793532279316.jpg",
+    description: "Prestigious royal luxury watch adorned with Roman numerals and diamond accents on an 18k gold-plated multi-link bracelet.",
     stock: 10
   }
 ];
@@ -632,57 +632,8 @@ export default function App() {
         {/* ===================== VIEW: HOMEPAGE / CATALOG ===================== */}
         {currentView === 'home' && (
           <div>
-            {/* Hero Banner Section */}
-            <section className="relative overflow-hidden border-b border-[#d4af37]/20 bg-gradient-to-b from-[#12141d] to-[#0b0c10] py-16 px-4">
-              <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10">
-                <div className="max-w-2xl text-center lg:text-left">
-                  <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[#d4af37] font-semibold mb-3 bg-[#d4af37]/10 px-3 py-1 rounded border border-[#d4af37]/20">
-                    <Sparkles className="w-3.5 h-3.5" />
-                    <span>Exclusive Horology Collection · 2026</span>
-                  </div>
-                  <h1 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 leading-tight">
-                    TIMELESS CRAFT. <br/>
-                    <span className="text-[#d4af37]">UNCOMPROMISED</span> LUXURY.
-                  </h1>
-                  <p className="text-gray-400 text-sm sm:text-base mb-6 leading-relaxed">
-                    Explore precision masterworks from Casio, Titan, Seiko, Fossil, Timex, and Fastrack. Each timepiece is 100% genuine with official brand warranty.
-                  </p>
-                  <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
-                    <a 
-                      href="#watches-grid" 
-                      className="bg-[#d4af37] hover:bg-[#ecc94b] text-black font-semibold text-xs tracking-wider uppercase px-6 py-3 rounded transition-colors"
-                    >
-                      Browse Watches
-                    </a>
-                    <button 
-                      onClick={() => { setSelectedCategory('Luxury'); }}
-                      className="border border-[#d4af37]/60 hover:border-[#d4af37] text-white hover:text-[#d4af37] text-xs tracking-wider uppercase px-6 py-3 rounded transition-colors cursor-pointer"
-                    >
-                      Luxury Editions
-                    </button>
-                  </div>
-                </div>
-
-                {/* Hero Showcase Image */}
-                <div className="w-full lg:w-1/2 max-w-lg rounded-xl overflow-hidden border border-[#d4af37]/30 shadow-2xl relative group">
-                  <img 
-                    src="/src/assets/images/hero_luxury_chronograph_1793529330446.jpg" 
-                    alt="TimeZone Luxury Chronograph" 
-                    className="w-full h-72 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-5">
-                    <div>
-                      <span className="text-[#d4af37] text-xs font-semibold tracking-wider uppercase">Master Chronometer</span>
-                      <h3 className="font-serif text-lg text-white font-bold">Swiss Automatic Gold Bezel</h3>
-                      <p className="text-gray-300 text-xs">Obsidian stone backdrop with sapphire glare protection</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Catalog & Filter Section */}
-            <section id="watches-grid" className="max-w-7xl mx-auto px-4 lg:px-8 py-10">
+            {/* Catalog & Filter Section with direct products */}
+            <section id="watches-grid" className="max-w-7xl mx-auto px-4 lg:px-8 py-8">
               
               {/* Filter Controls Bar */}
               <div className="bg-[#151722] p-5 rounded-lg border border-[#d4af37]/25 mb-8">
@@ -1461,9 +1412,14 @@ export default function App() {
             </div>
           </div>
 
-          <div className="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
-            <span>&copy; 2026 TimeZone Watches. All Rights Reserved.</span>
-            <span>All product prices listed in Indian Rupees (₹).</span>
+          <div className="pt-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-3">
+            <span>
+              &copy; 2026 TimeZone Watches. All Rights Reserved to{' '}
+              <strong className="text-amber-300 font-bold tracking-wide uppercase drop-shadow-[0_0_10px_rgba(252,211,77,0.85)]">
+                Sathish Gadhanavena
+              </strong>
+            </span>
+            <span className="text-gray-500">All product prices listed in Indian Rupees (₹).</span>
           </div>
         </div>
       </footer>

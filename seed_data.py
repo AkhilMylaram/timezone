@@ -48,8 +48,8 @@ SAMPLE_WATCHES = [
         "brand": "Titan",
         "category": "Luxury",
         "price": Decimal("24995.00"),
-        "image_url": "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",
-        "description": "One of the slimmest ceramic watches in the world at just 4.4mm thin. Hypoallergenic high-tech ceramic case with sapphire glass.",
+        "image_url": "/src/assets/images/hero_luxury_chronograph_1793529330446.jpg",
+        "description": "One of the slimmest ceramic watches in the world with obsidian black dial, hypoallergenic case, and sapphire glass.",
         "stock": 18
     },
     {
@@ -57,7 +57,7 @@ SAMPLE_WATCHES = [
         "brand": "Casio",
         "category": "Sports",
         "price": Decimal("8995.00"),
-        "image_url": "https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=800&q=80",
+        "image_url": "/src/assets/images/watch_gshock_rugged_1793532280139.jpg",
         "description": "The legendary 'CasiOak'. Ultra-rugged carbon core guard structure, 200M water resistance, dual digital-analog display with double LED illumination.",
         "stock": 35
     },
@@ -66,7 +66,7 @@ SAMPLE_WATCHES = [
         "brand": "Titan",
         "category": "Luxury",
         "price": Decimal("19995.00"),
-        "image_url": "https://images.unsplash.com/photo-1547996160-71dfa6358268?auto=format&fit=crop&w=800&q=80",
+        "image_url": "/src/assets/images/watch_skeleton_automatic_1793532302935.jpg",
         "description": "Intricate open-heart skeleton dial revealing the rhythmic heartbeat of precision automatic movement. Rose gold plated stainless steel case.",
         "stock": 12
     },
@@ -75,7 +75,7 @@ SAMPLE_WATCHES = [
         "brand": "Fastrack",
         "category": "Smartwatch",
         "price": Decimal("4995.00"),
-        "image_url": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=800&q=80",
+        "image_url": "/src/assets/images/watch_fastrack_smartwatch_1793532279618.jpg",
         "description": "1.3-inch Ultra AMOLED display with Bluetooth calling, built-in games, 100+ sports modes, SpO2 monitor, and 7-day battery life.",
         "stock": 50
     },
@@ -84,7 +84,7 @@ SAMPLE_WATCHES = [
         "brand": "Timex",
         "category": "Analog",
         "price": Decimal("16495.00"),
-        "image_url": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80",
+        "image_url": "/src/assets/images/watch_timex_vintage_1793532280439.jpg",
         "description": "A true 1960s reissue featuring a hand-wound mechanical movement, domed acrylic crystal, sunburst champagne dial, and embossed leather strap.",
         "stock": 14
     },
@@ -93,7 +93,7 @@ SAMPLE_WATCHES = [
         "brand": "Fossil",
         "category": "Smartwatch",
         "price": Decimal("22995.00"),
-        "image_url": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?auto=format&fit=crop&w=800&q=80",
+        "image_url": "/src/assets/images/watch_fastrack_smartwatch_1793532279618.jpg",
         "description": "Powered with Wear OS by Google. Qualcomm Snapdragon Wear 4100+ platform, fast charging, heart rate zone tracking, and phone calls on wrist.",
         "stock": 22
     },
@@ -102,8 +102,8 @@ SAMPLE_WATCHES = [
         "brand": "Seiko",
         "category": "Sports",
         "price": Decimal("26500.00"),
-        "image_url": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80",
-        "description": "Iconic diver aesthetics with unidirectional rotating bezel, Lumibrite hour markers, day/date complication, and 4R36 automatic caliber.",
+        "image_url": "/src/assets/images/watch_seiko_diver_1793532301210.jpg",
+        "description": "Iconic diver aesthetics with unidirectional rotating navy bezel, Lumibrite hour markers, day/date complication, and 4R36 automatic caliber.",
         "stock": 16
     },
     {
@@ -111,7 +111,7 @@ SAMPLE_WATCHES = [
         "brand": "Timex",
         "category": "Digital",
         "price": Decimal("5495.00"),
-        "image_url": "https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=800&q=80",
+        "image_url": "/src/assets/images/watch_gshock_rugged_1793532280139.jpg",
         "description": "Built for rugged wilderness adventures. Heavy-duty shock resistance, INDIGLO night-light, 100-hour chronograph, and countdown timer.",
         "stock": 40
     },
@@ -120,7 +120,7 @@ SAMPLE_WATCHES = [
         "brand": "Casio",
         "category": "Digital",
         "price": Decimal("4295.00"),
-        "image_url": "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=800&q=80",
+        "image_url": "/src/assets/images/watch_casio_vintage_gold_1793532302040.jpg",
         "description": "Timeless retro 1980s aesthetic with polished gold-tone stainless steel bracelet, daily alarm, hourly time signal, and auto-calendar.",
         "stock": 45
     },
@@ -129,8 +129,8 @@ SAMPLE_WATCHES = [
         "brand": "Fastrack",
         "category": "Analog",
         "price": Decimal("2895.00"),
-        "image_url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
-        "description": "Youthful contemporary minimalist timepiece with matte black dial, high-contrast neon second hand, and flexible silicone strap.",
+        "image_url": "/src/assets/images/hero_luxury_chronograph_1793529330446.jpg",
+        "description": "Youthful contemporary minimalist timepiece with textured black dial, high-contrast gold second hand, and flexible sport strap.",
         "stock": 60
     },
     {
@@ -138,7 +138,7 @@ SAMPLE_WATCHES = [
         "brand": "Titan",
         "category": "Luxury",
         "price": Decimal("32500.00"),
-        "image_url": "https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=800&q=80",
+        "image_url": "/src/assets/images/watch_titan_regalia_gold_1793532279316.jpg",
         "description": "Prestigious royal luxury watch adorned with genuine certified diamond hour markers on a gold-plated multi-link Jubilee bracelet.",
         "stock": 10
     }
