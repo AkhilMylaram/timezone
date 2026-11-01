@@ -1,0 +1,6 @@
+{
+  "name": "TimeZone Watches",
+  "description": "A luxury online watch shopping store featuring premium timepieces from Casio, Titan, Seiko, Fossil, Timex, and Fastrack with an elegant black, white, and gold design.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

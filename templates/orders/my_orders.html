@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}My Orders - TimeZone Watches{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <div>
+            <h1 class="font-cinzel text-white fs-2 mb-1">My Orders</h1>
+            <p class="text-secondary text-sm mb-0">Track and review past orders stored in MySQL</p>
+        </div>
+        <a href="{% url 'products:home' %}" class="btn btn-outline-gold btn-sm">
+            <i class="bi bi-arrow-left me-1"></i> Shop More
+        </a>
+    </div>
+
+    {% if orders %}
+        <div class="card bg-dark-card border-gold-subtle shadow-sm overflow-hidden">
+            <div class="table-responsive">
+                <table class="table table-dark-custom align-middle mb-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Watches</th>
+                            <th scope="col">Total Amount</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for order in orders %}
+                            <tr>
+                                <td>
+                                    <span class="font-mono text-gold fw-bold">{{ order.order_id }}</span>
+                                </td>
+                                <td class="text-secondary text-sm">
+                                    {{ order.created_at|date:"d M Y, h:i A" }}
+                                </td>
+                                <td>
+                                    <ul class="list-unstyled mb-0 text-sm">
+                                        {% for item in order.items.all %}
+                                            <li class="text-light-subtle">
+                                                <span class="text-gold">{{ item.quantity }}x</span> {{ item.product_name }}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </td>
+                                <td class="font-mono text-white fw-bold">
+                                    ₹{{ order.total_amount|floatformat:2 }}
+                                </td>
+                                <td>
+                                    <span class="badge bg-success-subtle text-success border border-success">{{ order.status }}</span>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {% else %}
+        <div class="text-center py-5 bg-dark-card rounded border border-secondary">
+            <i class="bi bi-box-seam text-secondary display-4 d-block mb-3"></i>
+            <h4 class="font-cinzel text-gold mb-2">No Orders Placed Yet</h4>
+            <p class="text-secondary mb-4">You have not completed any watch orders yet.</p>
+            <a href="{% url 'products:home' %}" class="btn btn-gold px-4">Browse Timepieces</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+
+{% block title %}TimeZone Watches - Premium Horology & Luxury Timepieces{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section text-center text-light position-relative mb-5">
+    <div class="container position-relative z-1 py-4">
+        <span class="text-gold text-uppercase tracking-widest text-sm fw-semibold mb-2 d-inline-block">The Masterpiece Collection</span>
+        <h1 class="font-cinzel display-4 fw-bold text-white mb-3">TIMELESS HOROLOGY & LUXURY</h1>
+        <p class="text-light-subtle fs-6 mx-auto mb-4" style="max-width: 650px;">
+            Discover authentic watches from the world's most prestigious horological houses. Engineered with uncompromised precision, crafted for distinction.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="#catalog" class="btn btn-gold px-4 py-2 text-uppercase tracking-wider">Explore Catalog</a>
+            <a href="?category=Luxury" class="btn btn-outline-light px-4 py-2 text-uppercase tracking-wider">Luxury Editions</a>
+        </div>
+    </div>
+</section>
+
+<!-- Main Catalog Container -->
+<div class="container mb-5" id="catalog">
+
+    <!-- Filters & Search Bar Section -->
+    <div class="bg-dark-card p-4 rounded border border-gold-subtle mb-4">
+        <div class="row g-3 align-items-center justify-content-between">
+            <!-- Brand Filter Buttons -->
+            <div class="col-lg-7">
+                <span class="text-secondary text-xs text-uppercase tracking-wider d-block mb-2">Filter by Brand:</span>
+                <div class="d-flex flex-wrap gap-2">
+                    <a href="{% url 'products:home' %}" class="btn btn-sm {% if selected_brand == 'All' and not selected_category != 'All' %}btn-gold{% else %}btn-dark-outline{% endif %}">
+                        All Brands
+                    </a>
+                    {% for b in brands %}
+                        <a href="?brand={{ b }}{% if selected_category != 'All' %}&category={{ selected_category }}{% endif %}" 
+                           class="btn btn-sm {% if selected_brand == b %}btn-gold{% else %}btn-dark-outline{% endif %}">
+                            {{ b }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Category Filter Dropdown / Buttons -->
+            <div class="col-lg-5 text-lg-end">
+                <span class="text-secondary text-xs text-uppercase tracking-wider d-block mb-2">Category:</span>
+                <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+                    <a href="{% url 'products:home' %}{% if selected_brand != 'All' %}?brand={{ selected_brand }}{% endif %}" 
+                       class="btn btn-sm {% if selected_category == 'All' %}btn-outline-gold active{% else %}btn-dark-outline{% endif %}">
+                        All
+                    </a>
+                    {% for c in categories %}
+                        <a href="?category={{ c }}{% if selected_brand != 'All' %}&brand={{ selected_brand }}{% endif %}" 
+                           class="btn btn-sm {% if selected_category == c %}btn-outline-gold active{% else %}btn-dark-outline{% endif %}">
+                            {{ c }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        {% if search_query %}
+            <div class="mt-3 pt-3 border-top border-secondary d-flex align-items-center justify-content-between">
+                <span class="text-light-subtle">
+                    Search results for: <strong class="text-gold">"{{ search_query }}"</strong> ({{ total_count }} found)
+                </span>
+                <a href="{% url 'products:home' %}" class="text-gold text-decoration-none text-sm"><i class="bi bi-x-circle me-1"></i>Clear search</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Product Grid Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="font-cinzel fs-3 text-white mb-0">Featured Timepieces</h2>
+            <p class="text-secondary text-sm mb-0">Showing {{ products.count }} of {{ total_count }} authentic watches</p>
+        </div>
+        <span class="badge border border-gold text-gold px-3 py-2">Official Warranty & Guaranteed Authenticity</span>
+    </div>
+
+    <!-- Responsive Product Grid -->
+    {% if products %}
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+            {% for product in products %}
+                <div class="col">
+                    <div class="card h-100 product-card d-flex flex-column">
+                        <!-- Image Container with fallback -->
+                        <div class="product-image-container">
+                            <img src="{{ product.image_url }}" 
+                                 class="product-image" 
+                                 alt="{{ product.brand }} {{ product.name }}"
+                                 loading="lazy"
+                                 referrerpolicy="no-referrer"
+                                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80';">
+                            <span class="position-absolute top-0 end-0 m-2 badge bg-obsidian-subtle border border-gold text-gold text-xs">
+                                {{ product.category }}
+                            </span>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="card-body p-3 d-flex flex-column">
+                            <span class="text-secondary text-uppercase text-xs tracking-wider fw-bold mb-1">{{ product.brand }}</span>
+                            <h5 class="card-title text-white fs-6 fw-semibold mb-2 line-clamp-1" title="{{ product.name }}">
+                                {{ product.name }}
+                            </h5>
+                            
+                            <p class="text-secondary text-xs mb-3 flex-grow-1 line-clamp-2">
+                                {{ product.description|truncatewords:14 }}
+                            </p>
+
+                            <div class="d-flex justify-content-between align-items-baseline mb-3 pt-2 border-top border-secondary">
+                                <span class="text-secondary text-xs">Price</span>
+                                <span class="fs-5 fw-bold text-gold font-mono">{{ product.formatted_price }}</span>
+                            </div>
+
+                            <!-- Add to Cart Form -->
+                            <form action="{% url 'cart:add_to_cart' product.id %}" method="POST" class="ajax-add-to-cart mt-auto">
+                                {% csrf_token %}
+                                <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                                <button type="submit" class="btn btn-gold w-100 d-flex align-items-center justify-content-center gap-2 py-2">
+                                    <i class="bi bi-bag-plus-fill"></i>
+                                    <span>Add to Cart</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="text-center py-5 bg-dark-card rounded border border-secondary">
+            <i class="bi bi-search text-secondary display-4 d-block mb-3"></i>
+            <h4 class="font-cinzel text-gold mb-2">No Watches Found</h4>
+            <p class="text-secondary mb-4">No watches matched your search or filter selection.</p>
+            <a href="{% url 'products:home' %}" class="btn btn-outline-gold px-4">View All Watches</a>
+        </div>
+    {% endif %}
+
+    <!-- Trust & Craftsmanship Strip -->
+    <div class="row g-4 mt-5 pt-3 border-top border-secondary">
+        <div class="col-md-4 text-center">
+            <div class="p-3 bg-dark-card rounded border border-secondary">
+                <i class="bi bi-patch-check-fill text-gold fs-2 mb-2 d-inline-block"></i>
+                <h5 class="font-cinzel fs-6 text-white mb-1">100% Genuine Timepieces</h5>
+                <p class="text-secondary text-xs mb-0">Direct brand authorization with official manufacturer warranty card.</p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="p-3 bg-dark-card rounded border border-secondary">
+                <i class="bi bi-box2-heart-fill text-gold fs-2 mb-2 d-inline-block"></i>
+                <h5 class="font-cinzel fs-6 text-white mb-1">Luxury Packaging</h5>
+                <p class="text-secondary text-xs mb-0">Delivered in velvet-lined collectors watch box with polishing cloth.</p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="p-3 bg-dark-card rounded border border-secondary">
+                <i class="bi bi-shield-lock-fill text-gold fs-2 mb-2 d-inline-block"></i>
+                <h5 class="font-cinzel fs-6 text-white mb-1">Secure Ordering</h5>
+                <p class="text-secondary text-xs mb-0">Seamless order processing backed by MySQL transaction integrity.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Order Confirmed - TimeZone Watches{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card bg-dark-card border-gold shadow-2xl p-4 p-md-5">
+                <!-- Green Success Icon -->
+                <div class="success-icon-wrapper mx-auto mb-3">
+                    <i class="bi bi-check-lg text-success display-3"></i>
+                </div>
+
+                <h1 class="font-cinzel text-gold fs-3 fw-bold mb-2">Order Placed Successfully!</h1>
+                <p class="text-light-subtle mb-4">Thank you for shopping with <strong class="text-white">TimeZone Watches</strong>.</p>
+
+                <!-- Order Receipt Box -->
+                <div class="bg-obsidian-subtle border border-secondary rounded p-4 mb-4 text-start">
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary">
+                        <span class="text-secondary text-sm">Order Reference ID:</span>
+                        <span class="font-mono text-gold fw-bold">{{ order.order_id }}</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary">
+                        <span class="text-secondary text-sm">Order Date & Time:</span>
+                        <span class="text-white text-sm">{{ order.created_at|date:"d M Y, h:i A" }}</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary">
+                        <span class="text-secondary text-sm">Customer Name:</span>
+                        <span class="text-white text-sm">{{ order.user.full_name }}</span>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom border-secondary">
+                        <span class="text-secondary text-sm">Status:</span>
+                        <span class="badge bg-success-subtle text-success border border-success">{{ order.status }}</span>
+                    </div>
+
+                    <!-- Items Purchased -->
+                    <div class="mb-3">
+                        <span class="text-secondary text-xs text-uppercase tracking-wider d-block mb-2">Purchased Items:</span>
+                        {% for item in order.items.all %}
+                            <div class="d-flex justify-content-between text-sm py-1">
+                                <span class="text-light">{{ item.quantity }}x {{ item.product_name }}</span>
+                                <span class="font-mono text-gold">₹{{ item.subtotal|floatformat:2 }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+
+                    <hr class="border-secondary my-3">
+
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <span class="text-white fw-bold">Total Order Amount:</span>
+                        <span class="font-mono fs-4 fw-bold text-gold">₹{{ order.total_amount|floatformat:2 }}</span>
+                    </div>
+                </div>
+
+                <!-- Continue Shopping Button -->
+                <a href="{% url 'products:home' %}" class="btn btn-gold w-100 py-3 fw-bold text-dark text-uppercase tracking-wider">
+                    <i class="bi bi-arrow-left me-2"></i>Continue Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if show_modal %}
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Automatically pop up the modal as specified in Requirement 7
+        const modalEl = document.getElementById('orderConfirmationModal');
+        if (modalEl) {
+            document.getElementById('modalOrderId').textContent = "{{ order.order_id }}";
+            document.getElementById('modalTotalAmount').textContent = "₹{{ order.total_amount|floatformat:2 }}";
+            const modal = new bootstrap.Modal(modalEl);
+            modal.show();
+        }
+    });
+</script>
+{% endif %}
+{% endblock %}

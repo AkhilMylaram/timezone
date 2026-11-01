@@ -1,0 +1,252 @@
+/* ==========================================================================
+   TimeZone Watches - Luxury Horology Theme (Black, White, Gold)
+   ========================================================================== */
+
+:root {
+    --gold-primary: #d4af37;
+    --gold-hover: #ecc94b;
+    --gold-light: #fef08a;
+    --gold-subtle: rgba(212, 175, 55, 0.25);
+    --gold-glow: rgba(212, 175, 55, 0.15);
+    --bg-dark-obsidian: #0c0d12;
+    --bg-obsidian-nav: #10121a;
+    --bg-dark-card: #151722;
+    --bg-dark-hover: #1b1e2d;
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+body {
+    background-color: var(--bg-dark-obsidian);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #f3f4f6;
+    letter-spacing: -0.01em;
+}
+
+.font-cinzel {
+    font-family: 'Cinzel', Georgia, serif;
+    letter-spacing: 0.04em;
+}
+
+.font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.bg-dark-obsidian {
+    background-color: var(--bg-dark-obsidian) !important;
+}
+
+.bg-obsidian-nav {
+    background-color: var(--bg-obsidian-nav) !important;
+}
+
+.bg-dark-card {
+    background-color: var(--bg-dark-card) !important;
+}
+
+.bg-obsidian-subtle {
+    background-color: #08090d !important;
+}
+
+.text-gold {
+    color: var(--gold-primary) !important;
+}
+
+.text-gold-light {
+    color: var(--gold-light) !important;
+}
+
+.border-gold {
+    border-color: var(--gold-primary) !important;
+}
+
+.border-gold-subtle {
+    border-color: var(--gold-subtle) !important;
+}
+
+.bg-gold {
+    background-color: var(--gold-primary) !important;
+}
+
+.hover-gold:hover {
+    color: var(--gold-primary) !important;
+    transition: color 0.2s ease;
+}
+
+/* Luxury Buttons */
+.btn-gold {
+    background-color: var(--gold-primary);
+    color: #0c0d12;
+    font-weight: 600;
+    border: 1px solid var(--gold-primary);
+    transition: all 0.25s ease;
+}
+
+.btn-gold:hover, .btn-gold:focus {
+    background-color: var(--gold-hover);
+    color: #000000;
+    border-color: var(--gold-hover);
+    box-shadow: 0 4px 14px var(--gold-glow);
+}
+
+.btn-outline-gold {
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    background-color: transparent;
+    transition: all 0.25s ease;
+}
+
+.btn-outline-gold:hover, .btn-outline-gold:focus, .btn-outline-gold.active {
+    background-color: var(--gold-primary);
+    color: #0c0d12;
+    border-color: var(--gold-primary);
+}
+
+.btn-dark-outline {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--gold-subtle);
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.btn-dark-outline:hover {
+    border-color: var(--gold-primary);
+    background-color: var(--gold-glow);
+    color: var(--gold-primary);
+}
+
+/* Alert styling */
+.alert-gold-subtle {
+    background-color: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--gold-primary);
+    color: #fef08a;
+}
+
+/* Product Card Styling */
+.product-card {
+    background-color: var(--bg-dark-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold-subtle);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 15px var(--gold-glow);
+}
+
+.product-image-container {
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+    background-color: #08090d;
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.06);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(180deg, rgba(12, 13, 18, 0.75) 0%, rgba(12, 13, 18, 0.95) 100%),
+                url('/src/assets/images/hero_luxury_chronograph_1793529330446.jpg') center/cover no-repeat;
+    border-bottom: 1px solid var(--gold-subtle);
+    padding: 90px 0;
+}
+
+/* Success Modal Icon */
+.success-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(34, 197, 94, 0.12);
+    border: 2px solid #22c55e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cart Table Styling */
+.table-dark-custom {
+    --bs-table-bg: transparent;
+    --bs-table-color: #f3f4f6;
+    --bs-table-border-color: rgba(255, 255, 255, 0.08);
+}
+
+.table-dark-custom th {
+    color: var(--gold-primary);
+    font-family: 'Cinzel', serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 2px solid var(--gold-subtle);
+    padding: 14px 16px;
+}
+
+.table-dark-custom td {
+    padding: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Quantity Stepper */
+.qty-stepper {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    background: #08090d;
+}
+
+.qty-stepper button {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.qty-stepper button:hover {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--gold-primary);
+}
+
+.qty-stepper .qty-val {
+    width: 38px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Form inputs */
+.form-control:focus, .form-select:focus {
+    background-color: var(--bg-dark-card);
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 0 0.2rem var(--gold-glow);
+    color: #ffffff;
+}
+
+/* Search input group */
+.search-input-group .form-control {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-input-group .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

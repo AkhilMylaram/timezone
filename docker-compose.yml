@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: timezone_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: timezone_db
+      MYSQL_USER: timezone_user
+      MYSQL_PASSWORD: timezone_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpassword"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - timezone_network
+
+  web:
+    build: .
+    container_name: timezone_django
+    restart: always
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=django-insecure-timezone-watches-prod-secret-2026
+      - DEBUG=True
+      - ALLOWED_HOSTS=*
+      - DB_NAME=timezone_db
+      - DB_USER=timezone_user
+      - DB_PASSWORD=timezone_pass
+      - DB_HOST=db
+      - DB_PORT=3306
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - timezone_network
+
+volumes:
+  mysql_data:
+
+networks:
+  timezone_network:
+    driver: bridge

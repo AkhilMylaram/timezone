@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ product.brand }} {{ product.name }} - TimeZone Watches{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="mb-4">
+        <a href="{% url 'products:home' %}" class="btn btn-dark-outline btn-sm">
+            <i class="bi bi-arrow-left me-1"></i> Back to Catalog
+        </a>
+    </div>
+
+    <div class="row g-5">
+        <!-- Watch Image Column -->
+        <div class="col-lg-6">
+            <div class="product-image-container rounded border border-gold-subtle shadow-lg" style="height: 480px;">
+                <img src="{{ product.image_url }}" 
+                     alt="{{ product.name }}" 
+                     class="w-100 h-100 object-fit-cover"
+                     onerror="this.src='https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80';">
+            </div>
+        </div>
+
+        <!-- Watch Details Column -->
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+            <span class="text-gold text-uppercase tracking-wider fw-bold text-sm mb-1">{{ product.brand }}</span>
+            <h1 class="font-cinzel text-white fs-2 mb-2">{{ product.name }}</h1>
+            <span class="badge bg-obsidian-subtle border border-gold text-gold text-xs align-self-start mb-3">
+                Category: {{ product.category }}
+            </span>
+
+            <div class="d-flex align-items-baseline gap-3 mb-4">
+                <span class="fs-2 fw-bold text-gold font-mono">{{ product.formatted_price }}</span>
+                <span class="text-secondary text-sm">Inclusive of all taxes</span>
+            </div>
+
+            <p class="text-light-subtle fs-6 mb-4 leading-relaxed">
+                {{ product.description }}
+            </p>
+
+            <div class="bg-dark-card p-3 rounded border border-secondary mb-4">
+                <div class="d-flex align-items-center gap-3 text-sm">
+                    <div class="d-flex align-items-center gap-1 text-success">
+                        <i class="bi bi-check2-circle fs-5"></i>
+                        <span>In Stock ({{ product.stock }} units)</span>
+                    </div>
+                    <span class="text-secondary">•</span>
+                    <div class="text-secondary">Official 2-Year Brand Warranty</div>
+                </div>
+            </div>
+
+            <!-- Add to Cart Form -->
+            <form action="{% url 'cart:add_to_cart' product.id %}" method="POST" class="ajax-add-to-cart mb-3">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-gold btn-lg w-100 py-3 fw-bold text-dark text-uppercase tracking-wider">
+                    <i class="bi bi-bag-plus-fill me-2"></i> Add to Cart
+                </button>
+            </form>
+
+            <a href="{% url 'cart:cart_detail' %}" class="btn btn-outline-light w-100 py-2">
+                <i class="bi bi-cart3 me-2"></i> Go to Cart
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
