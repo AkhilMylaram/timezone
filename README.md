@@ -127,15 +127,17 @@ The application utilizes Django ORM models mapping to the following MySQL tables
 To run the complete application with MySQL 8.0 and Django in Docker:
 
 ```bash
-docker compose up -d
+docker compose down
+docker compose up -d --build
 ```
 
 #### What happens automatically:
 1. Docker pulls and boots **MySQL 8.0** with healthchecks (`mysqladmin ping`).
 2. Builds the Django web container with Python 3.10 and database drivers.
-3. Automatically applies database migrations: `python manage.py migrate`.
-4. Automatically seeds the 14 sample watches: `python manage.py seed_watches`.
-5. Starts the Django development server on port **8000**.
+3. `/entrypoint.sh` is safely isolated from host mounts and normalized with Linux line endings.
+4. Automatically applies database migrations: `python manage.py migrate`.
+5. Automatically seeds the 14 sample watches: `python manage.py seed_watches`.
+6. Starts the Django development server on port **8000**.
 
 Open your browser and navigate to:
 ```

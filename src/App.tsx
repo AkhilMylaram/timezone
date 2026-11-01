@@ -1280,8 +1280,9 @@ export default function App() {
                 <p className="text-xs text-gray-400 mb-3">
                   Starts MySQL 8.0 with healthcheck, runs migrations, seeds 14 watches, and serves the Django app on port 8000:
                 </p>
-                <div className="bg-[#181a24] p-3 rounded font-mono text-xs text-emerald-300 overflow-x-auto">
-                  docker compose up -d
+                <div className="bg-[#181a24] p-3 rounded font-mono text-xs text-emerald-300 overflow-x-auto space-y-1">
+                  <div>docker compose down</div>
+                  <div className="text-white font-bold">docker compose up -d --build</div>
                 </div>
               </div>
 

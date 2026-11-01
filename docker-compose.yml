@@ -26,6 +26,7 @@ services:
     build: .
     container_name: timezone_django
     restart: always
+    entrypoint: ["/bin/sh", "/entrypoint.sh"]
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/app
